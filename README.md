@@ -60,44 +60,58 @@ In real-world datasets, values often vary widely in scale. For example, price va
 
 ---
 
-### 4.3 Types of Normalization Techniques
+### 4.3 Types of Normalization Techniques (With Formulas)
 
 #### 1. Min-Max Normalization
 
-This technique rescales data into a fixed range, usually between 0 and 1.
+This technique rescales data into a fixed range (usually 0 to 1).
 
-- The minimum value becomes 0  
-- The maximum value becomes 1  
-- All other values lie between 0 and 1  
+**Formula:**
 
-#### Advantages:
-- Simple and easy to understand  
-- Preserves relationships between values  
+\[
+X' = \frac{X - X_{min}}{X_{max} - X_{min}}
+\]
 
----
-
-#### 2. Z-Score Normalization
-
-This technique transforms data based on mean and standard deviation.
-
-- Centers data around zero  
-- Measures how far a value is from the mean  
-
-#### Advantages:
-- Useful when data contains outliers  
-- Standardizes distribution  
+Where:  
+- \(X\) = Original value  
+- \(X_{min}\) = Minimum value in dataset  
+- \(X_{max}\) = Maximum value in dataset  
+- \(X'\) = Normalized value  
 
 ---
 
-#### 3. Decimal Scaling
+#### 2. Z-Score Normalization (Standardization)
 
-In this method, values are scaled by dividing them by a power of 10.
+This technique standardizes data based on mean and standard deviation.
 
-- Moves decimal point to bring values within a smaller range  
+**Formula:**
 
-#### Advantages:
-- Simple method  
-- Maintains data distribution  
+\[
+Z = \frac{X - \mu}{\sigma}
+\]
+
+Where:  
+- \(X\) = Original value  
+- \(\mu\) = Mean of dataset  
+- \(\sigma\) = Standard deviation  
+- \(Z\) = Standardized value  
+
+---
+
+#### 3. Decimal Scaling Normalization
+
+In this method, values are scaled by dividing by a power of 10.
+
+**Formula:**
+
+\[
+X' = \frac{X}{10^j}
+\]
+
+Where:  
+- \(X\) = Original value  
+- \(j\) = Number of digits in the maximum absolute value  
+- \(X'\) = Normalized value  
 
 ---
 
