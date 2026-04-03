@@ -66,17 +66,14 @@ In real-world datasets, values often vary widely in scale. For example, price va
 
 This technique rescales data into a fixed range (usually 0 to 1).
 
-**Formula:**
-
-\[
-X' = \frac{X - X_{min}}{X_{max} - X_{min}}
-\]
+Formula:  
+X' = (X - X_min) / (X_max - X_min)
 
 Where:  
-- \(X\) = Original value  
-- \(X_{min}\) = Minimum value in dataset  
-- \(X_{max}\) = Maximum value in dataset  
-- \(X'\) = Normalized value  
+- X = Original value  
+- X_min = Minimum value  
+- X_max = Maximum value  
+- X' = Normalized value  
 
 ---
 
@@ -84,34 +81,28 @@ Where:
 
 This technique standardizes data based on mean and standard deviation.
 
-**Formula:**
-
-\[
-Z = \frac{X - \mu}{\sigma}
-\]
+Formula:  
+Z = (X - mean) / standard deviation
 
 Where:  
-- \(X\) = Original value  
-- \(\mu\) = Mean of dataset  
-- \(\sigma\) = Standard deviation  
-- \(Z\) = Standardized value  
+- X = Original value  
+- mean = Average value  
+- standard deviation = Spread of data  
+- Z = Standardized value  
 
 ---
 
 #### 3. Decimal Scaling Normalization
 
-In this method, values are scaled by dividing by a power of 10.
+This technique scales values by dividing them by powers of 10.
 
-**Formula:**
-
-\[
-X' = \frac{X}{10^j}
-\]
+Formula:  
+X' = X / (10^j)
 
 Where:  
-- \(X\) = Original value  
-- \(j\) = Number of digits in the maximum absolute value  
-- \(X'\) = Normalized value  
+- X = Original value  
+- j = Number of digits in maximum value  
+- X' = Normalized value  
 
 ---
 
@@ -119,78 +110,46 @@ Where:
 
 #### 1. Numerical Data
 - Represents measurable quantities  
-- Can be continuous (e.g., weight, price) or discrete (e.g., number of items)
+- Continuous (e.g., weight, price)  
+- Discrete (e.g., count)
 
 #### 2. Categorical Data
 - Represents labels or categories  
-- Cannot be directly used in mathematical models  
+- Cannot be directly used in calculations  
 
 ---
 
 ### 4.5 Encoding of Categorical Data
 
-Since machine learning models require numerical input, categorical data must be converted into numbers.
-
----
-
 #### 1. Label Encoding
-
-- Assigns a unique number to each category  
-- Example: Male → 0, Female → 1  
-
-#### Advantages:
-- Simple and memory efficient  
-
-#### Limitation:
-- May introduce unintended order among categories  
-
----
+- Assigns numbers to categories  
+- Example: Male = 0, Female = 1  
 
 #### 2. One-Hot Encoding
-
 - Creates separate columns for each category  
-- Each category is represented by binary values (0 or 1)
-
-#### Advantages:
-- No ordinal relationship between categories  
-- More accurate representation  
-
----
+- Uses 0 and 1 values  
 
 #### 3. Dummy Encoding
-
-- Similar to one-hot encoding  
-- Removes one column to avoid redundancy  
-
-#### Advantages:
-- Prevents multicollinearity  
-- Reduces dimensionality  
+- Same as one-hot but removes one column  
+- Prevents redundancy  
 
 ---
 
-### 4.6 Application on Dataset
+### 4.6 Importance of Normalization and Encoding
 
-In this experiment, normalization techniques were applied to datasets such as fruit data and product datasets. Features like price, calories, ratings, and units sold were normalized using different methods.
-
-Categorical variables such as gender, payment method, product category, and city were converted into numerical form using encoding techniques. This transformation made the data suitable for further analysis and modeling.
-
----
-
-### 4.7 Importance of Normalization and Encoding
-
-- Makes data suitable for machine learning models  
+- Makes data suitable for machine learning  
 - Improves accuracy and efficiency  
-- Ensures consistency in data representation  
-- Helps in handling both numerical and categorical data effectively  
+- Ensures consistency  
+- Helps in fair comparison of features  
 
 ---
 
 ## 5. Conclusion
 
-In this experiment, various data normalization techniques such as Min-Max normalization, Z-score normalization, and decimal scaling were successfully studied and applied. These techniques helped in scaling data to a uniform range, improving analysis accuracy.
+In this experiment, normalization techniques such as Min-Max, Z-score, and decimal scaling were studied and applied. These methods helped in scaling data effectively.
 
-Additionally, categorical data was converted into numerical form using label encoding, one-hot encoding, and dummy encoding. This transformation is essential for using data in machine learning models.
+Categorical data was also converted into numerical form using encoding techniques, making it suitable for analysis and modeling.
 
-Overall, this experiment demonstrated the importance of normalization and data type handling in exploratory data analysis and highlighted how Python provides efficient tools for preparing high-quality datasets.
+Overall, this experiment highlights the importance of data preprocessing in exploratory data analysis and demonstrates how normalization improves data quality and performance.
 
 ---
